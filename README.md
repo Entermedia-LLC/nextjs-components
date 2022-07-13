@@ -4,6 +4,8 @@
 
 [![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/Entermedia-LLC/nextjs-components.svg)](https://github.com/Entermedia-LLC/nextjs-components/blob/main/LICENSE)
 
+Requires https://github.com/Entermedia-LLC/nextjs-lib.
+
 ## Directory Structure
 
 ```

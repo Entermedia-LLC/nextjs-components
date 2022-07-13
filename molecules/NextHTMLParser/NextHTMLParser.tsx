@@ -4,7 +4,6 @@ import { NextLink } from "../../atoms/NextLink/NextLink";
 
 // Import library dependencies
 import parse, { HTMLReactParserOptions, domToReact } from "html-react-parser";
-import { isRelative } from "../../../lib/is-relative";
 import { Element } from "domhandler/lib/node";
 
 // Component properties
@@ -25,11 +24,7 @@ const options: HTMLReactParserOptions = {
       if (domNode.name === "img") {
         const { src, alt, width, height } = domNode.attribs;
 
-        if (isRelative(src)) {
-          return (
-            <NextImage src={src} alt={alt} width={width} height={height} />
-          );
-        }
+        return <NextImage src={src} alt={alt} width={width} height={height} />;
       }
 
       if (domNode.name === "a") {
