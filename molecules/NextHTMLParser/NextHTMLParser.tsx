@@ -8,7 +8,7 @@ import { isRelative } from "../../../lib/is-relative";
 import { Element } from "domhandler/lib/node";
 
 // Component properties
-interface HTMLParserProps {
+interface NextHTMLParserProps {
   /** HTML to parse */
   html: string;
   /** Class name */
@@ -18,6 +18,9 @@ interface HTMLParserProps {
 // Parser options
 const options: HTMLReactParserOptions = {
   replace: (domNode) => {
+    {
+      /* @TODO: Doesn't appear to e working. */
+    }
     if (domNode instanceof Element) {
       if (domNode.name === "img") {
         const { src, alt, width, height } = domNode.attribs;
@@ -34,6 +37,7 @@ const options: HTMLReactParserOptions = {
 
         return (
           <NextLink href={href}>
+            {/* @TODO: Fix TypeScript notice. */}
             <a className={className}>{domToReact(domNode.children)}</a>
           </NextLink>
         );
@@ -43,7 +47,7 @@ const options: HTMLReactParserOptions = {
 };
 
 // Component export
-export function NextHTMLParser({ html, className }: HTMLParserProps) {
+export function NextHTMLParser({ html, className }: NextHTMLParserProps) {
   if (!className?.length) {
     return <>{parse(html, options)}</>;
   }
