@@ -9,6 +9,8 @@ interface NextMetaTagProps {
     content?: string;
     rel?: string;
     property?: string;
+    charset?: string;
+    type?: string;
   };
 }
 
