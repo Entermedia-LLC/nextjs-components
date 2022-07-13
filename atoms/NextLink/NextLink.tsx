@@ -7,7 +7,7 @@ import type { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 
 // Import library dependencies
-import { isRelative } from "../../../lib/is-relative";
+import { isRelativeUrl } from "../../../lib/is-relative-url";
 
 // Component properties
 export interface NextLinkProps extends LinkProps {
@@ -26,7 +26,7 @@ export function NextLink(props: NextLinkProps) {
 
   // Use Next Link for internal links, and <a> for others.
   // @TODO: Fix TypeScript notice.
-  if (isRelative(href)) {
+  if (isRelativeUrl(href)) {
     // Disable prefetching in preview mode.
     // We do this here inside of inline `prefetch={!router.isPreview}`
     // because `prefetch={true}` is not allowed.

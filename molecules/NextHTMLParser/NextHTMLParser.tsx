@@ -18,7 +18,7 @@ interface NextHTMLParserProps {
 const options: HTMLReactParserOptions = {
   replace: (domNode) => {
     {
-      /* @TODO: Doesn't appear to e working. */
+      /* @TODO: Doesn't appear to be working. */
     }
     if (domNode instanceof Element) {
       if (domNode.name === "img") {
