@@ -11,7 +11,7 @@ import { isRelativeUrl } from "../../../lib/is-relative-url";
 
 // Component properties
 export interface NextLinkProps extends LinkProps {
-  children: React.ReactElement;
+  children: React.ReactNode;
 }
 
 // Component export
