@@ -11,35 +11,35 @@ import { isRelativeUrl } from "../../../lib/is-relative-url";
 
 // Component properties
 export interface NextLinkProps extends LinkProps {
-	children: React.ReactElement;
+  children: React.ReactNode;
 }
 
 // Component export
 export function NextLink({ children, href, ...props }: NextLinkProps) {
-	const router = useRouter();
+  const router = useRouter();
 
-	if (!href) {
-		return null;
-	}
+  if (!href) {
+    return null;
+  }
 
-	// Use Next Link for internal links, and <a> for others.
-	// @TODO: Fix TypeScript notice.
-	if (isRelativeUrl(href)) {
-		// Disable prefetching in preview mode.
-		// We do this here inside of inline `prefetch={!router.isPreview}`
-		// because `prefetch={true}` is not allowed.
-		// See https://nextjs.org/docs/messages/prefetch-true-deprecated
-		const linkProps = router.isPreview ? { prefetch: false, ...props } : props;
+  // Use Next Link for internal links, and <a> for others.
+  // @TODO: Fix TypeScript notice.
+  if (isRelativeUrl(href)) {
+    // Disable prefetching in preview mode.
+    // We do this here inside of inline `prefetch={!router.isPreview}`
+    // because `prefetch={true}` is not allowed.
+    // See https://nextjs.org/docs/messages/prefetch-true-deprecated
+    const linkProps = router.isPreview ? { prefetch: false, ...props } : props;
 
-		return (
-			<NextLinkComponent href={href} {...linkProps}>
-				{children}
-			</NextLinkComponent>
-		);
-	}
+    return (
+      <NextLinkComponent href={href} {...linkProps}>
+        {children}
+      </NextLinkComponent>
+    );
+  }
 
-	return React.cloneElement(children, {
-		href,
-		rel: "noreferrer noopener",
-	});
+  return React.cloneElement(children, {
+    href,
+    rel: "noreferrer noopener",
+  });
 }

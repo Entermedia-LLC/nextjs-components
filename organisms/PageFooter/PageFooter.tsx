@@ -1,6 +1,9 @@
 // Import config
 import { SITE_NAME } from "../../../config";
 
+// Import components
+import { NextLink } from "../../../components";
+
 // Import styles
 import layoutStyles from "../../../scss/helpers/layout.module.scss";
 
@@ -15,7 +18,8 @@ export function PageFooter({}: PageFooterProps) {
     <footer className={`${layoutStyles.wrapper} ${layoutStyles["padding-x"]}`}>
       <p style={{ textAlign: "center", opacity: "0.25" }}>
         <small>
-          &copy; {currentYear}. {SITE_NAME}. All rights reserved.
+          &copy; {currentYear}. <NextLink href="/">{SITE_NAME}</NextLink>. All
+          rights reserved.
         </small>
       </p>
     </footer>
