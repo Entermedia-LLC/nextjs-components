@@ -1,5 +1,5 @@
 // Import component dependencies
-import { PageFooter } from "components/organisms/PageFooter/PageFooter";
+import { PageFooter } from "../../organisms/PageFooter/PageFooter";
 
 // Component properties
 export interface PageTemplateProps {

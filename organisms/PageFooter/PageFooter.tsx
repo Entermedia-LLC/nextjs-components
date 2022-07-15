@@ -1,8 +1,8 @@
 // Import config
-import { SITE_NAME } from "../../../../config";
+import { SITE_NAME } from "../../../config";
 
 // Import styles
-import layoutStyles from "scss/helpers/layout.module.scss";
+import layoutStyles from "../../../scss/helpers/layout.module.scss";
 
 // Component properties
 export interface PageFooterProps {}
